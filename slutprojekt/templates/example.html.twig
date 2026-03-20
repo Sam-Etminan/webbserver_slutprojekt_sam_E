@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exempelsida med Twig</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main>
+    <h1>Lindholmen Ridklubb</h1>
+    <div>
+      {{ namn }}
+    </div>
+
+    <h2></h2>
+    <ul>
+    {% for item in exempelLista %}
+      <li>{{ item }}</li>
+    {% endfor %}
+    </ul>
+
+  </main>
+  
+</body>
+</html>
