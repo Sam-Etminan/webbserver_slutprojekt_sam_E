@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="sv">
-<head>  
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lindholmen Ridklubb</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+{% extends "bas.html.twig" %}
 
-  <main>
-    <h1>Lindholmen Ridklubb</h1>
+{% block main %}
+  <h1>Lindholmen Ridklubb</h1>
     <div>
       {{ namn }}
     </div>
@@ -20,9 +12,8 @@
       <li>{{ item }}</li>
     {% endfor %}
     </ul>
-    
-
-  </main>
+{% endblock %}
   
-</body>
-</html>
+
+
+  
