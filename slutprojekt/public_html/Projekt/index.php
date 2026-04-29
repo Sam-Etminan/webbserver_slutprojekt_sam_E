@@ -1,6 +1,7 @@
 <?php
 require_once('../../slutprojekt-app.php');
+?>
 
-
-$twig->display('example.html.twig');
-
+<div>
+<a href="<?= $siteurl ?>login/login.php">Logga in</a>
+</div> 
