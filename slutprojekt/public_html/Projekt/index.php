@@ -1,9 +1,26 @@
 <?php
 require_once('../../slutprojekt-app.php');
+
+unset($_SESSION["username"]);
+
+require($includeDir . "/header.php"); 
 ?>
 
-<div>
-    
-<a href="<?= $siteurl ?>login/login.php">Logga in</a>
+<main>
+       <h2>Logga in</h2>
 
-</div> 
+    <form action="login-formhandler.php" method="post">
+        <div>
+            <label for="username">Användarnamn:</label>
+            <input type="text"  name="username" id="username" required>
+        </div>
+        <div>
+            <label for="password">Lösenord: </label>
+            <input type="password" name="password" id="password" required>
+        </div>
+        <input type="submit" value="Logga in">
+    </form>
+
+
+</main>
+     

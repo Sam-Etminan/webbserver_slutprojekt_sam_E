@@ -1,31 +1,28 @@
 <?php
 session_start();
-
 // Database connection
-$dsn = "sqlite:" . __DIR__ . "/projekt-4.db";
+$dsn = "sqlite:" . __DIR__ . "/Slutprojekt.db";
 
 try {
     $pdo = new PDO($dsn);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     echo "Failed to connect to the database using DSN:<br>'$dsn'<br>" . $e->getMessage();
     exit();
 }
 
-// Autoloader, behövs för Twig
-spl_autoload_register(function ($classname)
-{
-    $dirs = [__DIR__ . '/twig-3.22.2/'];
-    foreach ($dirs as $dir) {
-        $filename = $dir . str_replace('\\', '/', $classname) .'.php';
-        if (file_exists($filename)) {
-            require_once $filename;
-            break;
-        }
-    }
-});
+function h($text) {
+    return htmlspecialchars($text);
+}
 
-// Inställningar för Twig
-$loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/templates');
-$twig = new \Twig\Environment($loader);
+$includeDir = __DIR__ . "/slutprojekt-includes";
+$title = "Lindholmen ridklubb";
+
+require_once(__DIR__ . "/slutprojekt-config.php");
+
+if (isset($_SESSION["Ryttarid"])){
+$getRyttarStmt = $pdo->prepare("SELECT * FROM Ryttare WHERE Ryttarid = :Ryttarid");
+$getRyttarStmt->execute(["Ryttarid" => $_SESSION["Ryttarid"]]);
+$Ryttare = $getRyttarStmt->fetch(PDO::FETCH_ASSOC);
+
+}
