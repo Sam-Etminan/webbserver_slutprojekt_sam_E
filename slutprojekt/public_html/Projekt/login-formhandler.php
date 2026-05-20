@@ -2,6 +2,9 @@
 
 require_once("../../slutprojekt-app.php");
 
+require($includeDir . "/header.php");
+
+
 $messages = array();
 
 // Har formuläret fyllts i?
@@ -36,7 +39,6 @@ if (!isset($_POST["username"]) || !isset($_POST["password"]) || $_POST["username
     }
 }
 
-require($includeDir . "/header.php");
 ?>
 
 <main>

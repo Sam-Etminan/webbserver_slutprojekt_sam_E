@@ -12,10 +12,11 @@
     <h1>lindholmen ridklubb</h1>
     <?php 
     if(isset($_SESSION["Ryttarid"])){
-        echo "<div>Inloggad som " . $_SESSION["Ryttarid"] . "</div>";
+        echo "<div>Inloggad som " . $Ryttare["Namn"] . " " . $Ryttare["Efternamn"] . "</div>";
     } ?>
 
 </header>
-<nav>
+<nav>   
     <a href="<?= $siteUrl ?>index.php">Logga ut</a>
-</nav>
+    <a href="<?= $siteUrl ?>Ryttare.php">Ryttare</a>
+</nav>  

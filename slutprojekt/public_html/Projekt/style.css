@@ -3,7 +3,7 @@
 }
 
 :root {
-    --site-width: 50rem;
+    --site-width: 70rem;
 }
 
 body {
@@ -36,6 +36,8 @@ nav a:hover {
 }
 
 table {
+    
+    margin: auto;
 
     border-spacing: 0;
 

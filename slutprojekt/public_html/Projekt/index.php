@@ -1,7 +1,7 @@
 <?php
 require_once('../../slutprojekt-app.php');
 
-unset($_SESSION["username"]);
+unset($_SESSION["Ryttarid"]);
 
 require($includeDir . "/header.php"); 
 ?>
