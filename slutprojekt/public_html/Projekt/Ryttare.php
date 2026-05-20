@@ -2,26 +2,48 @@
 require_once('../../slutprojekt-app.php');
 
 require($includeDir . "/header.php"); 
+
+$stmt = $pdo-> prepare("SELECT * FROM Ryttare");
+$stmt->execute();
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+
 ?> 
 
 <main>
 
+<?php if (isset($_SESSION["Ryttarid"])) : ?>
 
-<?php
+<table>
 
-if (isset($_SESSION["Ryttarid"])) :
+        <tr>
 
-echo "Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-Excepturi rem, unde non dolorem amet doloremque provident qui quas adipisci officiis,
-quidem accusantium velit similique facilis! Soluta eos eveniet magni a!";
+            <th>Förnamn</th>
+
+            <th>Efternamn</th>
 
 
+        </tr>
+        
+        <?php foreach ($result as $key => $value) : ?>
 
-else:
+        <tr>
 
-endif;    
+            <td><?=h($value['Namn']) ?></td>
 
-?>
+            <td><?= h($value['Efternamn']) ?></td>
+            
+        </tr>
+
+        <?php endforeach?>
+
+
+    </table>
+
+<?php endif ?>
+
+
 
 
 </main>
