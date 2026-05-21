@@ -17,6 +17,9 @@
 
 </header>
 <nav>   
-    <a href="<?= $siteUrl ?>index.php">Logga ut</a>
+    <a href="<?= $siteUrl ?>index.php">Logga in/ut</a>
     <a href="<?= $siteUrl ?>Ryttare.php">Ryttare</a>
+    <a href="<?= $siteUrl ?>Hästar.php">Hästar</a>
+    <a href="<?= $siteUrl ?>utsläpp.php">utsläpp</a>
+
 </nav>  

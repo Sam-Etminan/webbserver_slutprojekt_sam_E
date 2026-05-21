@@ -21,6 +21,7 @@ require($includeDir . "/header.php");
         <input type="submit" value="Logga in">
     </form>
 
-
+    <p>user: sametm1221 Lösenord: Studenten2026</p>
+    <p>user 2: linpon1218 Lösenord: Banan123</p>
 </main>
      

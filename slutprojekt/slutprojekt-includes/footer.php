@@ -1,6 +1,5 @@
 
 <footer>
-    Sidans footer.
 </footer>
 
 </body>
